@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mutual Fund Overlap Calculator 2026 — Free Portfolio Overlap Checker India</title>
+<meta name="description" content="Free Mutual Fund Overlap Calculator for Indian investors. Instantly check portfolio overlap between 2–5 mutual funds. Avoid over-diversification & hidden concentration risk. No data stored.">
+<meta name="keywords" content="mutual fund overlap calculator, portfolio overlap calculator, mutual fund overlap checker, fund overlap analysis tool, mutual fund portfolio overlap india">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://trustedbyraju.github.io/Mutual-Fund-Overlap-Calculator/">
+<meta property="og:title" content="Mutual Fund Overlap Calculator 2026 — Free Portfolio Overlap Checker">
+<meta property="og:description" content="Check how much your mutual funds overlap. Compare 2–5 funds instantly. Built for Indian investors. 100% free & private.">
+<meta property="og:url" content="https://trustedbyraju.github.io/Mutual-Fund-Overlap-Calculator/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mutual Fund Overlap Calculator 2026">
+<meta name="twitter:description" content="Free tool to check mutual fund portfolio overlap for Indian investors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sora: ['Sora', 'sans-serif'],
+        dm: ['DM Sans', 'sans-serif'],
+      },
+      colors: {
+        brand: {
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
+        }
+      },
+      animation: {
+        'fade-up': 'fadeUp 0.6s ease forwards',
+        'fade-in': 'fadeIn 0.5s ease forwards',
+        'pulse-slow': 'pulse 3s ease-in-out infinite',
+        'shimmer': 'shimmer 2s infinite',
+      },
+      keyframes: {
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        }
+      }
+    }
+  }
+}
+</script>
+<style>
+  :root {
+    --brand: #4f46e5;
+    --brand-light: #6366f1;
+    --brand-50: #eef2ff;
+    --surface: #ffffff;
+    --surface-2: #f8fafc;
+    --surface-3: #f1f5f9;
+    --border: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --green: #10b981;
+    --amber: #f59e0b;
+    --red: #ef4444;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: #f8fafc; color: var(--text-primary); overflow-x: hidden; }
+  h1,h2,h3,h4,h5,h6 { font-family: 'Sora', sans-serif; }
+
+  .glass {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.6);
+  }
+  .glass-dark {
+    background: rgba(15,23,42,0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+  .card:hover { box-shadow: 0 4px 24px rgba(79,70,229,0.1), 0 1px 3px rgba(0,0,0,0.06); }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: #fff; font-family: 'Sora', sans-serif; font-weight: 600;
+    padding: 12px 28px; border-radius: 10px; border: none; cursor: pointer;
+    transition: all 0.2s; box-shadow: 0 4px 14px rgba(79,70,229,0.35);
+    font-size: 15px; text-decoration: none;
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(79,70,229,0.45); background: linear-gradient(135deg, #4338ca, #4f46e5); }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: #fff; color: var(--brand); font-family: 'Sora', sans-serif; font-weight: 600;
+    padding: 11px 24px; border-radius: 10px; border: 1.5px solid #c7d2fe; cursor: pointer;
+    transition: all 0.2s; font-size: 14px;
+  }
+  .btn-secondary:hover { background: var(--brand-50); border-color: var(--brand); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    background: transparent; color: var(--text-secondary); font-family: 'DM Sans', sans-serif; font-weight: 500;
+    padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer;
+    transition: all 0.2s; font-size: 13px;
+  }
+  .btn-ghost:hover { background: var(--surface-3); border-color: #94a3b8; color: var(--text-primary); }
+
+  .input-field {
+    width: 100%; background: #fff; border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 10px 14px; font-family: 'DM Sans', sans-serif; font-size: 14px;
+    color: var(--text-primary); transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  .input-field:focus { border-color: var(--brand-light); box-shadow: 0 0 0 3px rgba(99,102,241,0.12); }
+  .input-field::placeholder { color: var(--text-muted); }
+
+  .progress-track { background: #e2e8f0; border-radius: 999px; overflow: hidden; height: 8px; }
+  .progress-fill {
+    height: 100%; border-radius: 999px;
+    background: linear-gradient(90deg, #4f46e5, #818cf8);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .progress-fill.green { background: linear-gradient(90deg, #10b981, #34d399); }
+  .progress-fill.amber { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+  .progress-fill.red { background: linear-gradient(90deg, #ef4444, #f87171); }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    font-family: 'Sora', sans-serif;
+  }
+  .badge-green { background: #d1fae5; color: #065f46; }
+  .badge-amber { background: #fef3c7; color: #92400e; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+  .badge-blue { background: #e0e7ff; color: #3730a3; }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #fafafe 0%, #eef2ff 50%, #f0f9ff 100%);
+  }
+  .mesh-bg {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  }
+  .mesh-circle {
+    position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4;
+  }
+
+  .nav-link {
+    font-size: 14px; font-weight: 500; color: var(--text-secondary);
+    transition: color 0.2s; text-decoration: none;
+  }
+  .nav-link:hover { color: var(--brand); }
+
+  .tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--brand-50); color: var(--brand); border-radius: 999px;
+    padding: 6px 14px; font-size: 13px; font-weight: 600; font-family: 'Sora', sans-serif;
+    border: 1px solid #c7d2fe;
+  }
+
+  .fund-card {
+    background: #fff; border: 1.5px solid var(--border); border-radius: 14px;
+    padding: 20px; transition: border-color 0.2s;
+  }
+  .fund-card:focus-within { border-color: var(--brand-light); }
+
+  .holding-row {
+    display: grid; grid-template-columns: 1fr auto auto;
+    gap: 8px; align-items: center;
+  }
+
+  .result-card {
+    background: linear-gradient(135deg, #f8fafc, #fff);
+    border: 1px solid var(--border); border-radius: 16px; padding: 24px;
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .overlap-pair {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 16px; background: var(--surface-2); border-radius: 12px;
+    border: 1px solid var(--border); margin-bottom: 12px;
+  }
+
+  .common-table { width: 100%; border-collapse: collapse; }
+  .common-table th {
+    background: var(--brand-50); color: var(--brand);
+    font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    padding: 10px 14px; text-align: left; border-bottom: 1px solid #c7d2fe;
+  }
+  .common-table td {
+    padding: 10px 14px; font-size: 13px; border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+  }
+  .common-table tr:last-child td { border-bottom: none; }
+  .common-table tr:hover td { background: var(--surface-2); }
+
+  .step-number {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    color: #fff; font-family: 'Sora', sans-serif; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(79,70,229,0.3);
+  }
+
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-question {
+    width: 100%; text-align: left; padding: 18px 0; background: none; border: none;
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; color: var(--text-primary);
+    transition: color 0.2s;
+  }
+  .faq-question:hover { color: var(--brand); }
+  .faq-answer { display: none; padding-bottom: 16px; font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+  .faq-answer.open { display: block; animation: fadeIn 0.3s ease; }
+  .faq-icon { transition: transform 0.3s; font-size: 20px; color: var(--brand); }
+  .faq-icon.open { transform: rotate(45deg); }
+
+  .trust-badge {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 16px; background: #fff; border: 1px solid var(--border);
+    border-radius: 10px; font-size: 13px; font-weight: 500;
+  }
+
+  footer a { color: #94a3b8; transition: color 0.2s; text-decoration: none; }
+  footer a:hover { color: #c7d2fe; }
+
+  .shimmer-text {
+    background: linear-gradient(90deg, #4f46e5 25%, #818cf8 50%, #4f46e5 75%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .section-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--brand); font-family: 'Sora', sans-serif;
+  }
+
+  @media (max-width: 640px) {
+    .btn-primary { padding: 11px 20px; font-size: 14px; }
+    .fund-card { padding: 14px; }
+  }
+
+  .hidden-result { display: none; }
+
+  .tab-btn {
+    padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 600;
+    font-family: 'Sora', sans-serif; cursor: pointer; border: none;
+    background: transparent; color: var(--text-secondary); transition: all 0.2s;
+  }
+  .tab-btn.active { background: var(--brand); color: #fff; box-shadow: 0 2px 8px rgba(79,70,229,0.3); }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f1f5f9; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+</style>
+
+<!-- JSON-LD Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Mutual Fund Overlap Calculator",
+      "url": "https://trustedbyraju.github.io/Mutual-Fund-Overlap-Calculator/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": "Free online mutual fund overlap calculator for Indian investors. Compare 2 to 5 mutual funds to identify common holdings, overlap percentage, and portfolio concentration risk. Works offline with no data stored.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Raju"
+      },
+      "featureList": "Mutual fund overlap analysis, Portfolio overlap percentage, Common holdings table, Diversification insights, Mobile-friendly interface"
+    },
+    {
+      "@type": "WebSite",
+      "name": "Mutual Fund Overlap Calculator",
+      "url": "https://trustedbyraju.github.io/Mutual-Fund-Overlap-Calculator/",
+      "description": "Free mutual fund overlap checker and portfolio analysis tool for Indian investors",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://trustedbyraju.github.io/Mutual-Fund-Overlap-Calculator/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is mutual fund overlap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mutual fund overlap refers to the percentage of common stocks held across two or more mutual funds in your portfolio. High overlap means your funds invest in many of the same companies, reducing actual diversification despite holding multiple funds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is portfolio overlap calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Portfolio overlap is calculated by identifying the common stocks between two funds and dividing the sum of the lower weights of those stocks by the total portfolio weight. An overlap above 50% is generally considered high and indicates low effective diversification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good overlap percentage between mutual funds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An overlap of 0–30% is considered low and indicates good diversification. An overlap of 30–60% is moderate and may be acceptable. An overlap above 60% is high and suggests the funds are largely investing in the same companies, offering limited diversification benefit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the mutual fund overlap calculator free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this mutual fund overlap calculator is completely free to use. There is no registration, no subscription, and no hidden fees. The tool runs entirely in your browser and does not store or transmit any data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many mutual funds can I compare at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can compare between 2 and 5 mutual funds simultaneously using this portfolio overlap calculator. The tool will show pairwise overlap percentages and a consolidated list of all common holdings across your selected funds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool store my fund data or portfolio information?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This mutual fund overlap checker is a fully offline tool. All calculations happen locally in your browser. No data is sent to any server, stored in any database, or shared with any third party. Your portfolio information remains completely private."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ====== STICKY HEADER ====== -->
+<header class="glass sticky top-0 z-50 border-b" style="border-color: rgba(226,232,240,0.8);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="#" class="flex items-center gap-2 no-underline">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold" style="background: linear-gradient(135deg, #4f46e5, #818cf8);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/><path d="M2 12h20"/></svg>
+        </div>
+        <span class="font-bold text-base" style="font-family:'Sora',sans-serif; color: var(--text-primary);">FundOverlap<span style="color:var(--brand)">.in</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#tool" class="nav-link">Calculator</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#tool" class="btn-primary" style="padding:8px 18px;font-size:13px;">Try Free Tool</a>
+      </nav>
+      <a href="#tool" class="md:hidden btn-primary" style="padding:8px 16px;font-size:13px;">Try Free</a>
+    </div>
+  </div>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="relative hero-gradient overflow-hidden" style="padding: 72px 0 80px;">
+  <div class="mesh-bg">
+    <div class="mesh-circle" style="width:500px;height:500px;background:#6366f1;top:-200px;right:-150px;"></div>
+    <div class="mesh-circle" style="width:400px;height:400px;background:#818cf8;bottom:-100px;left:-100px;"></div>
+  </div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 relative text-center">
+    <div class="tag mb-6 mx-auto w-fit">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Free Tool · No Sign-Up · 100% Private
+    </div>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-5" style="color:var(--text-primary);letter-spacing:-0.02em;">
+      Mutual Fund<br><span class="shimmer-text">Overlap Calculator</span>
+    </h1>
+    <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-8" style="color:var(--text-secondary);line-height:1.7;">
+      Discover hidden overlap in your mutual fund portfolio. Compare up to 5 funds instantly — see common holdings, overlap %, and get smart diversification insights.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center mb-10">
+      <a href="#tool" class="btn-primary text-base" style="padding:14px 32px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+        Check Portfolio Overlap
+      </a>
+      <a href="#how-it-works" class="btn-secondary text-base">
+        How It Works →
+      </a>
+    </div>
+    <!-- Trust Bar -->
+    <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+      <div class="flex items-center gap-2 text-sm" style="color:var(--text-muted);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>No data stored</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm" style="color:var(--text-muted);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Works offline</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm" style="color:var(--text-muted);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span>Built for India</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm" style="color:var(--text-muted);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        <span>Mobile-first</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== MAIN TOOL ====== -->
+<section id="tool" class="py-16 px-4 sm:px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+      <div class="section-label mb-3">Portfolio Overlap Calculator</div>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-3" style="color:var(--text-primary);">Enter Your Mutual Fund Holdings</h2>
+      <p class="text-base max-w-xl mx-auto" style="color:var(--text-secondary);">Add 2–5 funds with their top holdings. We'll calculate the overlap and tell you how diversified your portfolio really is.</p>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="flex flex-wrap gap-3 justify-between items-center mb-6">
+      <div class="flex gap-2">
+        <button onclick="addFund()" class="btn-primary" style="padding:9px 18px;font-size:13px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Fund
+        </button>
+        <button onclick="loadDemo()" class="btn-secondary" style="padding:9px 18px;font-size:13px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Load Demo
+        </button>
+      </div>
+      <button onclick="resetAll()" class="btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.8"/></svg>
+        Reset All
+      </button>
+    </div>
+
+    <!-- Fund Cards Container -->
+    <div id="fundsContainer" class="grid gap-4 mb-6"></div>
+
+    <!-- Calculate Button -->
+    <div class="flex justify-center mb-8">
+      <button onclick="calculateOverlap()" class="btn-primary" style="padding:15px 48px;font-size:16px;border-radius:12px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Calculate Overlap
+      </button>
+    </div>
+
+    <!-- ====== RESULTS ====== -->
+    <div id="resultsSection" class="hidden-result">
+      <div class="text-center mb-8">
+        <div class="section-label mb-2">Analysis Complete</div>
+        <h2 class="text-2xl sm:text-3xl font-bold" style="color:var(--text-primary);">Your Portfolio Overlap Report</h2>
+      </div>
+
+      <!-- Summary Cards -->
+      <div id="summaryCards" class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8"></div>
+
+      <!-- Tab Switch -->
+      <div class="card p-2 flex gap-1 w-fit mx-auto mb-6 rounded-xl border" style="background:#f8fafc;">
+        <button class="tab-btn active" id="tab-pairs" onclick="switchTab('pairs')">Pairwise Overlap</button>
+        <button class="tab-btn" id="tab-common" onclick="switchTab('common')">Common Holdings</button>
+        <button class="tab-btn" id="tab-insights" onclick="switchTab('insights')">Insights</button>
+      </div>
+
+      <!-- Pairs Tab -->
+      <div id="tab-content-pairs">
+        <div id="pairsContainer" class="space-y-3"></div>
+      </div>
+
+      <!-- Common Holdings Tab -->
+      <div id="tab-content-common" class="hidden-result">
+        <div class="card overflow-hidden">
+          <div class="p-5 border-b" style="border-color:var(--border);">
+            <h3 class="font-bold text-base" style="font-family:'Sora',sans-serif;">Common Holdings Across All Funds</h3>
+            <p class="text-sm mt-1" style="color:var(--text-secondary);">Stocks that appear in 2 or more of your selected funds</p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="common-table" id="commonHoldingsTable"></table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insights Tab -->
+      <div id="tab-content-insights" class="hidden-result">
+        <div id="insightsContainer" class="space-y-4"></div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="mt-8 p-4 rounded-xl" style="background:#fff7ed;border:1px solid #fed7aa;">
+        <div class="flex gap-3">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" style="flex-shrink:0;margin-top:1px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p class="text-sm" style="color:#9a3412;line-height:1.6;"><strong>Disclaimer:</strong> This tool is for educational purposes only. The overlap calculations are based on the holdings you enter manually. Always verify data from your fund's latest factsheet. This is not financial advice. Consult a SEBI-registered investment advisor for personalized guidance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FEATURES ====== -->
+<section id="features" class="py-16 px-4 sm:px-6" style="background:#fff;">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="section-label mb-3">Why Use This Tool</div>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-3" style="color:var(--text-primary);">Built for Smart Indian Investors</h2>
+      <p class="text-base max-w-xl mx-auto" style="color:var(--text-secondary);">A professional-grade fund overlap analysis tool that gives you institutional-quality insights — completely free.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card p-6">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eef2ff;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+        </div>
+        <h3 class="font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">Multi-Fund Comparison</h3>
+        <p class="text-sm" style="color:var(--text-secondary);line-height:1.6;">Compare 2 to 5 mutual funds at once. Get pairwise and combined overlap percentages in seconds.</p>
+      </div>
+      <div class="card p-6">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#f0fdf4;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 class="font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">Visual Overlap Scores</h3>
+        <p class="text-sm" style="color:var(--text-secondary);line-height:1.6;">Color-coded progress bars and percentage scores make it instantly clear which fund pairs overlap the most.</p>
+      </div>
+      <div class="card p-6">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#fff7ed;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 class="font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">Common Holdings Table</h3>
+        <p class="text-sm" style="color:var(--text-secondary);line-height:1.6;">See exactly which stocks appear in multiple funds, how many funds hold them, and their combined weight.</p>
+      </div>
+      <div class="card p-6">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#fdf4ff;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3 class="font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">Smart Insights</h3>
+        <p class="text-sm" style="color:var(--text-secondary);line-height:1.6;">Get actionable recommendations — whether to trim a fund, rebalance, or diversify into a different category.</p>
+      </div>
+      <div class="card p-6">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#f0f9ff;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">100% Private</h3>
+        <p class="text-sm" style="color:var(--text-secondary);line-height:1.6;">All calculations run in your browser. Zero data is transmitted or stored. Your portfolio stays yours.</p>
+      </div>
+      <div class="card p-6">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#fef2f2;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3 class="font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">Mobile-First Design</h3>
+        <p class="text-sm" style="color:var(--text-secondary);line-height:1.6;">Optimized for Indian smartphone users. Clean, fast, and easy to use on any screen size.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== HOW IT WORKS ====== -->
+<section id="how-it-works" class="py-16 px-4 sm:px-6 hero-gradient">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="section-label mb-3">Simple & Fast</div>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-3" style="color:var(--text-primary);">How the Portfolio Overlap Calculator Works</h2>
+      <p class="text-base max-w-xl mx-auto" style="color:var(--text-secondary);">Three steps to understand your mutual fund portfolio overlap in under 2 minutes.</p>
+    </div>
+    <div class="space-y-6">
+      <div class="card p-6 flex gap-5">
+        <div class="step-number">1</div>
+        <div>
+          <h3 class="font-bold text-base mb-1" style="font-family:'Sora',sans-serif;">Add Your Mutual Funds</h3>
+          <p class="text-sm" style="color:var(--text-secondary);line-height:1.6;">Enter the names of 2 to 5 mutual funds you hold. You can also load our demo data with pre-filled popular Indian mutual funds to see how the tool works.</p>
+        </div>
+      </div>
+      <div class="card p-6 flex gap-5">
+        <div class="step-number">2</div>
+        <div>
+          <h3 class="font-bold text-base mb-1" style="font-family:'Sora',sans-serif;">Enter Top Holdings</h3>
+          <p class="text-sm" style="color:var(--text-secondary);line-height:1.6;">For each fund, enter the stock names and their allocation percentages. You can find this data in your fund's latest factsheet on AMFI, Value Research, or Morningstar.</p>
+        </div>
+      </div>
+      <div class="card p-6 flex gap-5">
+        <div class="step-number">3</div>
+        <div>
+          <h3 class="font-bold text-base mb-1" style="font-family:'Sora',sans-serif;">Get Your Overlap Report</h3>
+          <p class="text-sm" style="color:var(--text-secondary);line-height:1.6;">Click Calculate Overlap to instantly see your portfolio overlap percentage, a table of common holdings, and smart insights on how to reduce duplication and improve diversification.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TRUST / EEAT ====== -->
+<section class="py-16 px-4 sm:px-6" style="background:#fff;">
+  <div class="max-w-4xl mx-auto">
+    <div class="card p-8">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <div class="section-label mb-3">EEAT — Trust & Transparency</div>
+          <h2 class="text-2xl sm:text-3xl font-bold mb-4" style="color:var(--text-primary);">Built by Investors, for Investors</h2>
+          <p class="text-sm mb-5" style="color:var(--text-secondary);line-height:1.7;">This mutual fund overlap checker was built to solve a real problem: most Indian investors own 3–7 mutual funds thinking they're diversified, when in reality 60–80% of their portfolio is concentrated in the same large-cap stocks.</p>
+          <p class="text-sm mb-6" style="color:var(--text-secondary);line-height:1.7;">This tool is a free, open, educational resource. It does not provide financial advice, does not sell any products, and does not collect any data.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              No Login Required
+            </span>
+            <span class="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Zero Ads
+            </span>
+            <span class="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Open Source
+            </span>
+            <span class="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              SEBI Compliant Disclaimer
+            </span>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl" style="background:var(--brand-50);border:1px solid #c7d2fe;">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0" style="background:linear-gradient(135deg,#4f46e5,#818cf8);">R</div>
+              <div>
+                <div class="font-bold text-sm" style="font-family:'Sora',sans-serif;color:var(--text-primary);">Raju · Creator</div>
+                <div class="text-xs mb-1" style="color:var(--text-muted);">Independent Investor & Tool Builder</div>
+                <p class="text-xs" style="color:var(--text-secondary);line-height:1.5;">"I built this tool after realizing my own portfolio of 5 'different' mutual funds had 70% overlap. I hope it helps you make more informed investment decisions."</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 rounded-xl" style="background:#f0fdf4;border:1px solid #bbf7d0;">
+            <div class="flex gap-3 items-start">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" style="flex-shrink:0;margin-top:1px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div>
+                <div class="font-bold text-sm mb-1" style="font-family:'Sora',sans-serif;color:#065f46;">Data Privacy Guarantee</div>
+                <p class="text-xs" style="color:#047857;line-height:1.5;">All data you enter stays in your browser. Nothing is saved to any server or database. Clearing your browser clears all data.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section id="faq" class="py-16 px-4 sm:px-6 hero-gradient">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="section-label mb-3">Common Questions</div>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-3" style="color:var(--text-primary);">Frequently Asked Questions</h2>
+      <p class="text-base" style="color:var(--text-secondary);">About mutual fund overlap, portfolio diversification, and this tool.</p>
+    </div>
+    <div class="card p-2 sm:p-6 divide-y" style="border-color:var(--border);">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What is mutual fund overlap?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Mutual fund overlap refers to the percentage of common stocks held across two or more mutual funds in your portfolio. High overlap means your funds invest in many of the same companies, reducing actual diversification despite holding multiple funds. For example, if both your Large Cap Fund and Flexi Cap Fund hold Reliance, HDFC Bank, and Infosys in large proportions, your effective diversification is much lower than it appears.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How is portfolio overlap percentage calculated?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          This mutual fund overlap calculator identifies common stocks between two funds. For each common stock, it takes the minimum weight between the two funds and sums them up. The result is the overlap percentage. For example, if Fund A holds Reliance at 8% and Fund B holds Reliance at 5%, that contributes 5% to the overlap. This method prevents double-counting and gives a realistic measure of concentration.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What is a good overlap percentage between funds?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Generally: 0–30% overlap is considered Low — excellent diversification. 30–60% is Moderate — acceptable but monitor closely. 60%+ is High — you are essentially holding the same portfolio twice, which defeats the purpose of having multiple funds. For Indian large-cap or index funds, some overlap is expected as they all tend to hold Nifty 50 or Sensex stocks. The key is to ensure your mid-cap, small-cap, and thematic funds have low overlap with your core large-cap holdings.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Does this tool work for all types of Indian mutual funds?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes. This portfolio overlap calculator works for any equity mutual fund — Large Cap, Mid Cap, Small Cap, Flexi Cap, Multi Cap, ELSS, Sector Funds, Thematic Funds, and Index Funds. You just need to enter the fund's holdings manually from the latest factsheet. It is most useful for equity funds as debt funds have very different holdings.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Where can I find the holdings data for my mutual funds?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          You can find the latest holdings (portfolio disclosure) for any Indian mutual fund on: the fund house's official website (e.g., HDFC AMC, SBI MF), AMFI India (amfiindia.com), Value Research Online (valueresearchonline.com), Morningstar India (morningstar.in), or Moneycontrol. Funds are required by SEBI to disclose their top 10 holdings every month. For best results, use data that is less than 30 days old.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Is this mutual fund overlap checker free to use?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes, this tool is 100% free. There is no subscription, no premium tier, no registration, and no hidden fees. It is a gift to the Indian investor community. The tool runs entirely in your browser — no servers, no databases, no tracking. You can bookmark it and use it offline as well.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section id="about" class="py-16 px-4 sm:px-6" style="background:#fff;">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="section-label mb-3">About This Tool</div>
+    <h2 class="text-3xl font-bold mb-5" style="color:var(--text-primary);">The #1 Free Mutual Fund Overlap Calculator for Indian Investors</h2>
+    <p class="text-base mb-4 max-w-3xl mx-auto" style="color:var(--text-secondary);line-height:1.8;">
+      This <strong>mutual fund overlap calculator</strong> is designed to help Indian retail investors understand how much their mutual fund portfolio is truly diversified. Many investors hold 4–6 funds believing they are well-diversified, but a <strong>portfolio overlap analysis</strong> often reveals that 60–75% of their equity exposure is concentrated in the same large-cap stocks.
+    </p>
+    <p class="text-base mb-8 max-w-3xl mx-auto" style="color:var(--text-secondary);line-height:1.8;">
+      Our <strong>fund overlap analysis tool</strong> provides a clear, visual breakdown of common holdings across funds. Whether you use it as a <strong>portfolio overlap calculator</strong> to check before adding a new fund, or as a <strong>mutual fund overlap checker</strong> to audit your existing portfolio, this tool gives you the clarity to invest smarter.
+    </p>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl text-center" style="background:var(--brand-50);border:1px solid #c7d2fe;">
+        <div class="text-3xl font-extrabold mb-1 shimmer-text">2–5</div>
+        <div class="text-sm" style="color:var(--text-secondary);font-family:'Sora',sans-serif;font-weight:600;">Funds Compared</div>
+      </div>
+      <div class="p-6 rounded-2xl text-center" style="background:#f0fdf4;border:1px solid #bbf7d0;">
+        <div class="text-3xl font-extrabold mb-1" style="color:#10b981;">0%</div>
+        <div class="text-sm" style="color:var(--text-secondary);font-family:'Sora',sans-serif;font-weight:600;">Data Stored</div>
+      </div>
+      <div class="p-6 rounded-2xl text-center" style="background:#fff7ed;border:1px solid #fed7aa;">
+        <div class="text-3xl font-extrabold mb-1" style="color:#f97316;">Free</div>
+        <div class="text-sm" style="color:var(--text-secondary);font-family:'Sora',sans-serif;font-weight:600;">Always & Forever</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer style="background:#0f172a;color:#94a3b8;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold" style="background:linear-gradient(135deg,#4f46e5,#818cf8);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/><path d="M2 12h20"/></svg>
+          </div>
+          <span class="font-bold text-white" style="font-family:'Sora',sans-serif;">FundOverlap<span style="color:#818cf8;">.in</span></span>
+        </div>
+        <p class="text-sm leading-relaxed mb-4" style="max-width:280px;">Free mutual fund overlap calculator for Indian investors. Check portfolio overlap, find common holdings, and make smarter investment decisions.</p>
+        <p class="text-xs" style="color:#475569;line-height:1.6;"><strong style="color:#64748b;">Disclaimer:</strong> This tool is for educational purposes only and does not constitute financial advice. Always consult a SEBI-registered investment advisor before making investment decisions.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white text-sm mb-4" style="font-family:'Sora',sans-serif;">Tool</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#tool">Mutual Fund Overlap Calculator</a></li>
+          <li><a href="#tool">Portfolio Overlap Checker</a></li>
+          <li><a href="#tool">Fund Overlap Analysis</a></li>
+          <li><a href="#tool">Load Demo Data</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white text-sm mb-4" style="font-family:'Sora',sans-serif;">Resources</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About the Tool</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs" style="border-color:#1e293b;color:#475569;">
+      <p>© 2026 FundOverlap.in — Free Mutual Fund Overlap Calculator India. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          No data stored · Fully private
+        </span>
+        <span>Made with ♥ for Indian investors</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// =============================================
+// DATA & STATE
+// =============================================
+let funds = [];
+let fundIdCounter = 0;
+
+const DEMO_DATA = [
+  {
+    name: "Mirae Asset Large Cap Fund",
+    holdings: [
+      { stock: "HDFC Bank", pct: 9.8 },
+      { stock: "Infosys", pct: 8.2 },
+      { stock: "Reliance Industries", pct: 7.5 },
+      { stock: "ICICI Bank", pct: 6.9 },
+      { stock: "TCS", pct: 6.1 },
+      { stock: "Larsen & Toubro", pct: 4.2 },
+      { stock: "Kotak Mahindra Bank", pct: 3.8 },
+      { stock: "Axis Bank", pct: 3.5 },
+      { stock: "HUL", pct: 2.9 },
+      { stock: "Bajaj Finance", pct: 2.7 }
+    ]
+  },
+  {
+    name: "SBI Bluechip Fund",
+    holdings: [
+      { stock: "HDFC Bank", pct: 10.1 },
+      { stock: "Reliance Industries", pct: 8.8 },
+      { stock: "TCS", pct: 7.3 },
+      { stock: "Infosys", pct: 6.5 },
+      { stock: "ICICI Bank", pct: 5.8 },
+      { stock: "Maruti Suzuki", pct: 4.1 },
+      { stock: "Axis Bank", pct: 3.9 },
+      { stock: "Sun Pharma", pct: 3.2 },
+      { stock: "Nestle India", pct: 2.8 },
+      { stock: "Wipro", pct: 2.4 }
+    ]
+  },
+  {
+    name: "Parag Parikh Flexi Cap Fund",
+    holdings: [
+      { stock: "HDFC Bank", pct: 5.2 },
+      { stock: "ITC", pct: 4.8 },
+      { stock: "Infosys", pct: 4.5 },
+      { stock: "Coal India", pct: 4.1 },
+      { stock: "HCL Technologies", pct: 3.9 },
+      { stock: "Power Grid", pct: 3.5 },
+      { stock: "NTPC", pct: 3.2 },
+      { stock: "Bajaj Finance", pct: 2.8 },
+      { stock: "TCS", pct: 2.5 },
+      { stock: "Maruti Suzuki", pct: 2.1 }
+    ]
+  }
+];
+
+// =============================================
+// FUND MANAGEMENT
+// =============================================
+function createFundCard(fund) {
+  const card = document.createElement('div');
+  card.className = 'fund-card';
+  card.id = `fund-${fund.id}`;
+  card.innerHTML = `
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold" style="background:linear-gradient(135deg,#4f46e5,#818cf8);">F${fund.num}</div>
+        <span class="font-semibold text-sm" style="font-family:'Sora',sans-serif;color:var(--text-primary);">Fund ${fund.num}</span>
+      </div>
+      <div class="flex gap-2">
+        <button onclick="addHolding(${fund.id})" class="btn-ghost" style="padding:5px 10px;font-size:12px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Stock
+        </button>
+        ${funds.length > 2 ? `<button onclick="removeFund(${fund.id})" class="btn-ghost" style="padding:5px 10px;font-size:12px;color:#ef4444;border-color:#fecaca;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Remove
+        </button>` : ''}
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="block text-xs font-semibold mb-1.5" style="color:var(--text-muted);font-family:'Sora',sans-serif;letter-spacing:0.04em;">FUND NAME</label>
+      <input type="text" class="input-field" id="fundName-${fund.id}" value="${fund.name || ''}" placeholder="e.g. Mirae Asset Large Cap Fund">
+    </div>
+    <div>
+      <div class="flex items-center justify-between mb-2">
+        <label class="text-xs font-semibold" style="color:var(--text-muted);font-family:'Sora',sans-serif;letter-spacing:0.04em;">HOLDINGS (STOCK · ALLOCATION %)</label>
+      </div>
+      <div id="holdings-${fund.id}" class="space-y-2">
+      </div>
+    </div>
+  `;
+  document.getElementById('fundsContainer').appendChild(card);
+  fund.holdings.forEach(h => addHoldingRow(fund.id, h.stock, h.pct));
+}
+
+function addHoldingRow(fundId, stockName = '', pct = '') {
+  const container = document.getElementById(`holdings-${fundId}`);
+  const row = document.createElement('div');
+  row.className = 'holding-row';
+  row.innerHTML = `
+    <input type="text" class="input-field" style="font-size:13px;padding:8px 12px;" placeholder="Stock name (e.g. HDFC Bank)" value="${stockName}">
+    <input type="number" class="input-field" style="font-size:13px;padding:8px 10px;width:80px;text-align:right;" placeholder="%" min="0" max="100" step="0.1" value="${pct}">
+    <button onclick="this.parentElement.remove()" style="width:28px;height:28px;border-radius:6px;border:1px solid #fecaca;background:#fff;color:#ef4444;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;line-height:1;">×</button>
+  `;
+  container.appendChild(row);
+}
+
+function addHolding(fundId) {
+  addHoldingRow(fundId);
+}
+
+function addFund() {
+  if (funds.length >= 5) {
+    alert('You can compare a maximum of 5 mutual funds at once.');
+    return;
+  }
+  fundIdCounter++;
+  const fund = { id: fundIdCounter, num: funds.length + 1, name: '', holdings: [] };
+  funds.push(fund);
+  createFundCard(fund);
+}
+
+function removeFund(id) {
+  funds = funds.filter(f => f.id !== id);
+  const card = document.getElementById(`fund-${id}`);
+  if (card) card.remove();
+  // Renumber
+  funds.forEach((f, i) => {
+    f.num = i + 1;
+    const numEl = document.querySelector(`#fund-${f.id} .w-7`);
+    if (numEl) numEl.textContent = `F${i+1}`;
+    const labelEl = document.querySelector(`#fund-${f.id} .font-semibold`);
+    if (labelEl) labelEl.textContent = `Fund ${i+1}`;
+  });
+}
+
+function loadDemo() {
+  funds = [];
+  fundIdCounter = 0;
+  document.getElementById('fundsContainer').innerHTML = '';
+  document.getElementById('resultsSection').classList.add('hidden-result');
+  DEMO_DATA.forEach(d => {
+    fundIdCounter++;
+    const fund = { id: fundIdCounter, num: funds.length + 1, name: d.name, holdings: d.holdings };
+    funds.push(fund);
+    createFundCard(fund);
+  });
+}
+
+function resetAll() {
+  funds = [];
+  fundIdCounter = 0;
+  document.getElementById('fundsContainer').innerHTML = '';
+  document.getElementById('resultsSection').classList.add('hidden-result');
+  // Add 2 empty funds
+  addFund(); addFund();
+}
+
+// =============================================
+// COLLECT DATA
+// =============================================
+function getFundData() {
+  return funds.map(f => {
+    const nameEl = document.getElementById(`fundName-${f.id}`);
+    const name = nameEl ? nameEl.value.trim() || `Fund ${f.num}` : `Fund ${f.num}`;
+    const rows = document.querySelectorAll(`#holdings-${f.id} .holding-row`);
+    const holdings = {};
+    rows.forEach(row => {
+      const inputs = row.querySelectorAll('input');
+      const stock = inputs[0].value.trim();
+      const pct = parseFloat(inputs[1].value);
+      if (stock && !isNaN(pct) && pct > 0) {
+        holdings[stock.toLowerCase()] = { display: stock, pct };
+      }
+    });
+    return { name, holdings };
+  });
+}
+
+// =============================================
+// CALCULATION ENGINE
+// =============================================
+function calculatePairOverlap(fundA, fundB) {
+  const stocksA = fundA.holdings;
+  const stocksB = fundB.holdings;
+  const commonKeys = Object.keys(stocksA).filter(k => stocksB[k]);
+  let overlapPct = 0;
+  const commonDetails = [];
+  commonKeys.forEach(k => {
+    const w = Math.min(stocksA[k].pct, stocksB[k].pct);
+    overlapPct += w;
+    commonDetails.push({
+      stock: stocksA[k].display,
+      wA: stocksA[k].pct,
+      wB: stocksB[k].pct,
+      overlap: w
+    });
+  });
+  commonDetails.sort((a, b) => b.overlap - a.overlap);
+  return { overlapPct: Math.min(overlapPct, 100), commonDetails };
+}
+
+function getOverlapLevel(pct) {
+  if (pct < 30) return { label: 'Low Overlap', color: 'green', badge: 'badge-green', insight: 'Good diversification', fillClass: 'green' };
+  if (pct < 60) return { label: 'Moderate Overlap', color: 'amber', badge: 'badge-amber', insight: 'Consider reviewing', fillClass: 'amber' };
+  return { label: 'High Overlap', color: 'red', badge: 'badge-red', insight: 'Low diversification', fillClass: 'red' };
+}
+
+// =============================================
+// CALCULATE & RENDER
+// =============================================
+function calculateOverlap() {
+  const fundData = getFundData();
+  if (fundData.length < 2) { alert('Please add at least 2 mutual funds to compare.'); return; }
+
+  const hasHoldings = fundData.every(f => Object.keys(f.holdings).length >= 1);
+  if (!hasHoldings) { alert('Please enter at least 1 holding per fund.'); return; }
+
+  // Compute all pairs
+  const pairs = [];
+  for (let i = 0; i < fundData.length; i++) {
+    for (let j = i + 1; j < fundData.length; j++) {
+      const result = calculatePairOverlap(fundData[i], fundData[j]);
+      pairs.push({ fundA: fundData[i], fundB: fundData[j], ...result });
+    }
+  }
+
+  // Common holdings across ALL funds
+  const allStockSets = fundData.map(f => new Set(Object.keys(f.holdings)));
+  const universalCommon = Object.keys(fundData[0].holdings).filter(k =>
+    allStockSets.every(s => s.has(k))
+  );
+
+  // Common in ANY 2+ funds
+  const stockCount = {};
+  fundData.forEach(f => {
+    Object.keys(f.holdings).forEach(k => {
+      if (!stockCount[k]) stockCount[k] = { count: 0, display: f.holdings[k].display, funds: [], weights: [] };
+      stockCount[k].count++;
+      stockCount[k].funds.push(f.name);
+      stockCount[k].weights.push(f.holdings[k].pct);
+    });
+  });
+  const commonStocks = Object.values(stockCount)
+    .filter(s => s.count >= 2)
+    .sort((a, b) => b.count - a.count || b.weights[0] - a.weights[0]);
+
+  const avgOverlap = pairs.reduce((s, p) => s + p.overlapPct, 0) / pairs.length;
+
+  // Show results
+  document.getElementById('resultsSection').classList.remove('hidden-result');
+
+  renderSummaryCards(pairs, avgOverlap, commonStocks, fundData);
+  renderPairs(pairs);
+  renderCommonHoldings(commonStocks, fundData);
+  renderInsights(pairs, avgOverlap, commonStocks, fundData);
+
+  document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  switchTab('pairs');
+}
+
+function renderSummaryCards(pairs, avgOverlap, commonStocks, fundData) {
+  const level = getOverlapLevel(avgOverlap);
+  document.getElementById('summaryCards').innerHTML = `
+    <div class="card p-5 text-center">
+      <div class="text-3xl font-extrabold mb-1" style="font-family:'Sora',sans-serif;color:var(--brand);">${avgOverlap.toFixed(1)}%</div>
+      <div class="text-xs font-semibold" style="color:var(--text-muted);font-family:'Sora',sans-serif;">Avg. Overlap</div>
+    </div>
+    <div class="card p-5 text-center">
+      <div class="text-3xl font-extrabold mb-1" style="font-family:'Sora',sans-serif;color:#10b981;">${fundData.length}</div>
+      <div class="text-xs font-semibold" style="color:var(--text-muted);font-family:'Sora',sans-serif;">Funds Compared</div>
+    </div>
+    <div class="card p-5 text-center">
+      <div class="text-3xl font-extrabold mb-1" style="font-family:'Sora',sans-serif;color:#f97316;">${commonStocks.length}</div>
+      <div class="text-xs font-semibold" style="color:var(--text-muted);font-family:'Sora',sans-serif;">Common Stocks</div>
+    </div>
+    <div class="card p-5 text-center">
+      <div class="text-2xl font-extrabold mb-1" style="font-family:'Sora',sans-serif;color:${level.color === 'green' ? '#10b981' : level.color === 'amber' ? '#f59e0b' : '#ef4444'};">${level.label.split(' ')[0]}</div>
+      <div class="text-xs font-semibold" style="color:var(--text-muted);font-family:'Sora',sans-serif;">Risk Level</div>
+    </div>
+  `;
+}
+
+function renderPairs(pairs) {
+  const container = document.getElementById('pairsContainer');
+  container.innerHTML = '';
+  pairs.forEach(pair => {
+    const level = getOverlapLevel(pair.overlapPct);
+    const div = document.createElement('div');
+    div.className = 'result-card';
+    div.innerHTML = `
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-1">
+            <span class="font-bold text-base" style="font-family:'Sora',sans-serif;color:var(--text-primary);">${pair.fundA.name}</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <span class="font-bold text-base" style="font-family:'Sora',sans-serif;color:var(--text-primary);">${pair.fundB.name}</span>
+          </div>
+          <span class="badge ${level.badge}">${level.label} · ${level.insight}</span>
+        </div>
+        <div class="text-right">
+          <div class="text-2xl font-extrabold" style="font-family:'Sora',sans-serif;color:${level.color === 'green' ? '#10b981' : level.color === 'amber' ? '#f59e0b' : '#ef4444'};">${pair.overlapPct.toFixed(1)}%</div>
+          <div class="text-xs" style="color:var(--text-muted);">${pair.commonDetails.length} common stocks</div>
+        </div>
+      </div>
+      <div class="progress-track mb-4">
+        <div class="progress-fill ${level.fillClass}" id="pb-${Math.random().toString(36).substr(2,6)}" style="width:0%"></div>
+      </div>
+      ${pair.commonDetails.length > 0 ? `
+      <div class="mt-3">
+        <div class="text-xs font-semibold mb-2" style="color:var(--text-muted);font-family:'Sora',sans-serif;letter-spacing:0.05em;">TOP COMMON HOLDINGS</div>
+        <div class="flex flex-wrap gap-2">
+          ${pair.commonDetails.slice(0, 6).map(c => `
+            <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs" style="background:var(--surface-2);border:1px solid var(--border);">
+              <span style="color:var(--text-primary);font-weight:600;">${c.stock}</span>
+              <span style="color:var(--text-muted);">${c.overlap.toFixed(1)}%</span>
+            </div>
+          `).join('')}
+          ${pair.commonDetails.length > 6 ? `<div class="flex items-center px-3 py-1.5 rounded-lg text-xs" style="background:var(--brand-50);border:1px solid #c7d2fe;color:var(--brand);font-weight:600;">+${pair.commonDetails.length - 6} more</div>` : ''}
+        </div>
+      </div>` : `<div class="text-sm text-center py-2" style="color:var(--text-muted);">No common holdings found between these funds.</div>`}
+    `;
+    container.appendChild(div);
+    // Animate progress bar
+    const pb = div.querySelector('.progress-fill');
+    requestAnimationFrame(() => {
+      setTimeout(() => { pb.style.width = pair.overlapPct + '%'; }, 100);
+    });
+  });
+}
+
+function renderCommonHoldings(commonStocks, fundData) {
+  const table = document.getElementById('commonHoldingsTable');
+  if (commonStocks.length === 0) {
+    table.innerHTML = '<tr><td class="text-center py-8" style="color:var(--text-muted);">No common holdings found across funds.</td></tr>';
+    return;
+  }
+  let html = `<thead><tr>
+    <th>Stock</th>
+    <th>Appears In</th>
+    ${fundData.map(f => `<th style="max-width:120px;">${f.name.split(' ').slice(0,3).join(' ')}</th>`).join('')}
+    <th>Fund Count</th>
+  </tr></thead><tbody>`;
+
+  commonStocks.forEach(s => {
+    html += `<tr>
+      <td class="font-semibold">${s.display}</td>
+      <td>${s.funds.slice(0,2).map(f => f.split(' ')[0]).join(', ')}${s.funds.length > 2 ? ` +${s.funds.length - 2}` : ''}</td>
+      ${fundData.map(f => {
+        const key = s.display.toLowerCase();
+        const h = f.holdings[key];
+        return `<td>${h ? `<span class="badge badge-blue">${h.pct.toFixed(1)}%</span>` : '<span style="color:var(--text-muted);">—</span>'}</td>`;
+      }).join('')}
+      <td><span class="badge ${s.count >= fundData.length ? 'badge-red' : s.count >= 3 ? 'badge-amber' : 'badge-green'}">${s.count}/${fundData.length} funds</span></td>
+    </tr>`;
+  });
+  html += '</tbody>';
+  table.innerHTML = html;
+}
+
+function renderInsights(pairs, avgOverlap, commonStocks, fundData) {
+  const container = document.getElementById('insightsContainer');
+  container.innerHTML = '';
+  const insights = [];
+
+  // Overall
+  const level = getOverlapLevel(avgOverlap);
+  insights.push({
+    icon: level.fillClass === 'green' ? '✅' : level.fillClass === 'amber' ? '⚠️' : '🚨',
+    title: `Overall Portfolio: ${level.label}`,
+    text: avgOverlap < 30
+      ? `Your portfolio has an average overlap of ${avgOverlap.toFixed(1)}%, which indicates excellent diversification. Your funds are investing in largely different companies, reducing concentration risk.`
+      : avgOverlap < 60
+      ? `Your portfolio has a ${avgOverlap.toFixed(1)}% average overlap. This is moderate. Consider checking if you truly need all these funds or if one could be replaced with a fund from a different category (e.g., mid-cap or international).`
+      : `Your portfolio has a high average overlap of ${avgOverlap.toFixed(1)}%. This means your funds are largely investing in the same companies. Consider consolidating to 2–3 funds with different investment mandates.`,
+    color: level.fillClass
+  });
+
+  // High overlap pairs
+  const highPairs = pairs.filter(p => p.overlapPct >= 60);
+  if (highPairs.length > 0) {
+    highPairs.forEach(p => {
+      insights.push({
+        icon: '🔴',
+        title: `High Overlap: ${p.fundA.name.split(' ').slice(0,3).join(' ')} & ${p.fundB.name.split(' ').slice(0,3).join(' ')}`,
+        text: `These two funds have a ${p.overlapPct.toFixed(1)}% overlap with ${p.commonDetails.length} common stocks. Holding both provides minimal additional diversification. Consider replacing one with a fund from a different category or investment style.`,
+        color: 'red'
+      });
+    });
+  }
+
+  // Top repeated stocks
+  const topRepeated = commonStocks.filter(s => s.count >= Math.min(3, fundData.length));
+  if (topRepeated.length > 0) {
+    insights.push({
+      icon: '📊',
+      title: `Concentrated in ${topRepeated.slice(0,3).map(s => s.display).join(', ')}`,
+      text: `These stocks appear in ${topRepeated[0].count} or more of your funds. This concentrates your portfolio risk in these companies beyond their individual weights. Be aware of your true single-stock exposure.`,
+      color: 'amber'
+    });
+  }
+
+  // Good funds
+  const lowPairs = pairs.filter(p => p.overlapPct < 30);
+  if (lowPairs.length > 0) {
+    insights.push({
+      icon: '💡',
+      title: 'Recommendation: Maintain Low-Overlap Pairs',
+      text: `The pair of ${lowPairs[0].fundA.name.split(' ').slice(0,3).join(' ')} and ${lowPairs[0].fundB.name.split(' ').slice(0,3).join(' ')} shows excellent diversification at ${lowPairs[0].overlapPct.toFixed(1)}% overlap. This is the kind of complementary pairing you should aim for across your entire portfolio.`,
+      color: 'green'
+    });
+  }
+
+  // General tip
+  insights.push({
+    icon: '💡',
+    title: 'Pro Tip: How to Reduce Mutual Fund Overlap',
+    text: 'To minimize overlap, combine funds from different categories: a Large Cap or Index Fund, a Mid Cap Fund, a Small Cap Fund, and optionally an International or Sectoral Fund. Avoid holding multiple funds in the same category (e.g., two large-cap funds) as they tend to hold identical stocks.',
+    color: 'brand'
+  });
+
+  insights.forEach(ins => {
+    const colors = {
+      green: { bg: '#f0fdf4', border: '#bbf7d0', title: '#065f46' },
+      amber: { bg: '#fffbeb', border: '#fde68a', title: '#92400e' },
+      red: { bg: '#fef2f2', border: '#fecaca', title: '#991b1b' },
+      brand: { bg: '#eef2ff', border: '#c7d2fe', title: '#3730a3' }
+    };
+    const c = colors[ins.color] || colors.brand;
+    const div = document.createElement('div');
+    div.style.cssText = `background:${c.bg};border:1px solid ${c.border};border-radius:14px;padding:18px;`;
+    div.innerHTML = `
+      <div class="flex gap-3">
+        <span style="font-size:20px;flex-shrink:0;">${ins.icon}</span>
+        <div>
+          <div class="font-bold text-sm mb-1" style="font-family:'Sora',sans-serif;color:${c.title};">${ins.title}</div>
+          <p class="text-sm" style="color:var(--text-secondary);line-height:1.7;">${ins.text}</p>
+        </div>
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+// =============================================
+// TABS
+// =============================================
+function switchTab(tab) {
+  ['pairs', 'common', 'insights'].forEach(t => {
+    document.getElementById(`tab-content-${t}`).classList.add('hidden-result');
+    document.getElementById(`tab-${t}`).classList.remove('active');
+  });
+  document.getElementById(`tab-content-${tab}`).classList.remove('hidden-result');
+  document.getElementById(`tab-${tab}`).classList.add('active');
+}
+
+// =============================================
+// FAQ TOGGLE
+// =============================================
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const icon = btn.querySelector('.faq-icon');
+  const isOpen = answer.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+  if (!isOpen) {
+    answer.classList.add('open');
+    icon.classList.add('open');
+  }
+}
+
+// =============================================
+// INIT
+// =============================================
+window.addEventListener('DOMContentLoaded', () => {
+  addFund(); addFund();
+});
+</script>
+</body>
+</html>
